@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Livraria Exitus</string>
     <string name="bem_vindo">Bem-vindo à Exitus</string>
+
+    <string name="action_buscar">Buscar</string>
+    <string name="action_sair">Sair</string>
+    <string name="action_adicionar">Adicionar</string>
 </resources>
