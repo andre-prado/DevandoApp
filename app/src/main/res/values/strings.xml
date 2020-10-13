@@ -5,4 +5,10 @@
     <string name="action_buscar">Buscar</string>
     <string name="action_sair">Sair</string>
     <string name="action_adicionar">Adicionar</string>
+    <string name="nav_livros">Livros</string>
+    <string name="nav_vendas">Vendas</string>
+    <string name="nav_sair">Sair</string>
+
+    <string name="nav_abrir">Abrir</string>
+    <string name="nav_fechar">Fechar</string>
 </resources>

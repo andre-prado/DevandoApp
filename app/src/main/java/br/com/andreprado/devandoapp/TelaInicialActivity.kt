@@ -6,13 +6,19 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicialActivity : AppCompatActivity() {
+class TelaInicialActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
+
+        this.generic_layout = layoutMenuLateral
 
         val intent = Intent(this, BotaoActivity::class.java)
         val params = Bundle()
@@ -35,6 +41,13 @@ class TelaInicialActivity : AppCompatActivity() {
             intent.putExtras(params)
             startActivity(intent)
         }
+
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.title = "Exitus"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        configuraMenuLateral()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
