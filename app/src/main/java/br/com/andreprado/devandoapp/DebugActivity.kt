@@ -46,7 +46,8 @@ open class DebugActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_livros -> {
-                Toast.makeText(this, "Clicou livros", Toast.LENGTH_SHORT).show()
+                var livros = Intent(this, LivrosActivity::class.java)
+                startActivity(livros)
             }
             R.id.nav_vendas -> {
                 Toast.makeText(this, "Clicou vendas", Toast.LENGTH_SHORT).show()
