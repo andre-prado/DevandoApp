@@ -44,7 +44,7 @@ class LivrosActivity : DebugActivity() {
 
     fun taskLivros() {
         Thread {
-            this.livros = LivroService.getLivros()
+            this.livros = LivroService.getLivros(this)
             runOnUiThread {
                 recyclerLivros?.adapter = LivroAdapter(this.livros) { onClickLivro(it) }
             }

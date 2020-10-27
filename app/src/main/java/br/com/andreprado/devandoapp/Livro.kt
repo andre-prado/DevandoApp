@@ -1,9 +1,13 @@
 package br.com.andreprado.devandoapp
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
+@Entity(tableName = "Livros")
 class Livro: Serializable {
 
+    @PrimaryKey
     var id:Long = 0
     var titulo = ""
     var autor = ""
