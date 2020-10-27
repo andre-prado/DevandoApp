@@ -25,7 +25,7 @@ class CadastroActivity : DebugActivity() {
             livro.titulo = livroTitulo.text.toString()
 
             Thread {
-                LivroService.setLivros(livro)
+                LivroService.setLivros(livro, this)
                 runOnUiThread { finish() }
             }.start()
         }

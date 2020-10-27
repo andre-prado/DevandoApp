@@ -24,10 +24,8 @@ class TelaInicialActivity : DebugActivity() {
         val params = Bundle()
 
         button_cadastro.setOnClickListener{
-            val textoBotao = button_cadastro.text.toString()
-            params.putString("valor", textoBotao)
-            intent.putExtras(params)
-            startActivity(intent)
+            var cadastroIntent = Intent(this, CadastroActivity::class.java)
+            startActivity(cadastroIntent)
         }
         button_alterar.setOnClickListener{
             val textoBotao = button_alterar.text.toString()

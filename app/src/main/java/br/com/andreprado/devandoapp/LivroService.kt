@@ -43,9 +43,13 @@ object LivroService {
         }
     }
 
-    fun setLivros(livro: Livro) {
-        val json = GsonBuilder().create().toJson(livro)
-        HttpHelper.post("$host/livros", json)
+    fun setLivros(livro: Livro, context: Context) {
+        if (AndroidUtils.isInternetDisponivel(context)) {
+            val json = GsonBuilder().create().toJson(livro)
+            HttpHelper.post("$host/livros", json)
+        } else {
+            DataBaseManager.getLivroDAO().insert(livro)
+        }
     }
 
     inline fun <reified T> parserJson(json: String): T {
