@@ -17,8 +17,6 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class LivrosActivity : DebugActivity() {
 
-    private var livros = listOf<Livro>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_livros)
@@ -42,10 +40,15 @@ class LivrosActivity : DebugActivity() {
         taskLivros()
     }
 
-    fun taskLivros() {
-        livros = LivroService.getLivros()
+    var livros = listOf<Livro>()
 
-        recyclerLivros?.adapter = LivroAdapter(livros) {onClickLivro(it)}
+    fun taskLivros() {
+        Thread {
+            this.livros = LivroService.getLivros()
+            runOnUiThread {
+                recyclerLivros?.adapter = LivroAdapter(this.livros) { onClickLivro(it) }
+            }
+        }.start()
     }
 
     fun onClickLivro(livro: Livro) {

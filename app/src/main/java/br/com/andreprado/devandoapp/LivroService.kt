@@ -1,23 +1,25 @@
 package br.com.andreprado.devandoapp
 
+import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
 object LivroService {
+    val host = "https://andreprado.pythonanywhere.com"
+    val TAG = "WS_Devando"
 
     fun getLivros(): List<Livro> {
-        val livros = mutableListOf<Livro>()
+        val url = "$host/login"
+        val json = HttpHelper.get(url)
 
-        for(i in 1..10) {
-            val l = Livro()
-            l.autor = "Autor $i"
-            l.categoria = "Categoria $i"
-            l.editora = "Editora $i"
-            l.estoque = "Estoque $i"
-            l.foto = "https://static.vecteezy.com/system/resources/previews/000/292/434/non_2x/blank-book-on-white-background-vector.jpg"
-            l.isbn = "ISBN $i"
-            l.preco = "Preco $i"
-            l.titulo = "Titulo $i"
+        Log.d(TAG, "teste")
 
-            livros.add(l)
-        }
-        return livros
+        return parserJson<List<Livro>>(json)
+
+    }
+
+    inline fun <reified T> parserJson(json: String): T {
+        val type = object: TypeToken<T>(){}.type
+        return Gson().fromJson<T>(json, type)
     }
 }
