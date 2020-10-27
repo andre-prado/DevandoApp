@@ -9,10 +9,10 @@ object LivroService {
     val TAG = "WS_Devando"
 
     fun getLivros(): List<Livro> {
-        val url = "$host/login"
+        val url = "$host/livros"
         val json = HttpHelper.get(url)
 
-        Log.d(TAG, "teste")
+        Log.d(TAG, json)
 
         return parserJson<List<Livro>>(json)
 
