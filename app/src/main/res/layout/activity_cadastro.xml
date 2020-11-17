@@ -12,64 +12,64 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Autor" />
+        android:hint="Autor"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Categoria" />
+        android:hint="Categoria"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroEditora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Editora" />
+        android:hint="Editora"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroEstoque"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Estoque" />
+        android:hint="Estoque"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Foto" />
+        android:hint="Foto"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroISBN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="ISBN" />
+        android:hint="ISBN"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroPreco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Preço" />
+        android:hint="Preço"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/livroTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Título" />
+        android:hint="Título"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/livroSalvar"
